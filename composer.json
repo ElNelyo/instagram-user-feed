@@ -1,5 +1,5 @@
 {
-  "name": "pgrimaud/instagram-user-feed",
+  "name": "elnelyo/instagram-user-feed",
   "type": "library",
   "description": "This is a scraper to easily fetch any feed and interact with Instagram (like, follow, etc.) without OAuth for PHP.",
   "keywords": [
@@ -10,7 +10,7 @@
     "social",
     "sdk"
   ],
-  "homepage": "https://github.com/pgrimaud/instagram-user-feed",
+  "homepage": "https://github.com/elnelyo/instagram-user-feed",
   "license": "MIT",
   "authors": [
     {
@@ -18,12 +18,8 @@
       "email": "grimaud.pierre@gmail.com"
     },
     {
-      "name": "Charles Salvan",
-      "email": "charles.salvan@hotmail.fr"
-    },
-    {
-      "name": "Tim Bond",
-      "email": "cookieguru@gmail.com"
+      "name": "STERN Charly",
+      "email": "contact@uniwave.app"
     }
   ],
   "autoload": {

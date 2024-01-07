@@ -6,6 +6,8 @@ namespace Instagram\Utils;
 
 class Endpoints
 {
+    public const FOLLOWER_URL_NEWS = 'https://www.instagram.com/api/v1/friendships/{{accountId}}/followers/?count=5&search_surface=follow_list_page';
+
     public const FOLLOW_URL = 'https://www.instagram.com/web/friendships/{{accountId}}/follow/';
     public const UNFOLLOW_URL = 'https://www.instagram.com/web/friendships/{{accountId}}/unfollow/';
 
@@ -29,6 +31,12 @@ class Endpoints
     const LIKE_STORY_URL = 'https://i.instagram.com/api/v1/story_interactions/send_story_like';
 
     const UNLIKE_STORY_URL = 'https://i.instagram.com/api/v1/story_interactions/unsend_story_like';
+
+
+    public static function getFollowUrlNew(int $accountId): string
+    {
+        return str_replace('{{accountId}}', (string) $accountId, static::FOLLOWER_URL_NEWS);
+    }
 
     /**
      * @param int $accountId

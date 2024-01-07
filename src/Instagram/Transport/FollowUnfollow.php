@@ -22,6 +22,13 @@ class FollowUnfollow extends AbstractDataFeed
         return $this->fetchData($endpoint);
     }
 
+    public function followNew(int $accountId): string
+    {
+        $endpoint = Endpoints::getFollowUrlNew($accountId);
+        return $this->fetchData($endpoint);
+    }
+
+
     /**
      * @param int $accountId
      *

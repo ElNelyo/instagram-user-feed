@@ -59,7 +59,8 @@ use Instagram\Transport\{CommentPost,
     LocationData,
     LiveData,
     ReelsDataFeed,
-    TimelineDataFeed
+    TimelineDataFeed,
+    StoryInteraction
 };
 use Psr\Cache\CacheItemPoolInterface;
 use Instagram\Utils\{InstagramHelper, OptionHelper};
@@ -446,6 +447,51 @@ class Api
         $userName = $feed->fetchData($id);
 
         return $this->getProfile($userName);
+    }
+
+    /**
+     * @param int $storyId
+     * @param int $ownerId
+     * @param int $takenAt
+     * @param int $seenAt
+     *
+     * @return string
+     *
+     * @throws Exception\InstagramAuthException
+     * @throws Exception\InstagramFetchException
+     */
+    public function seenStory(int $storyId, int $ownerId, int $takenAt, int $seenAt): string
+    {
+        $storyInteraction = new StoryInteraction($this->client, $this->session);
+        return $storyInteraction->seen($storyId, $ownerId, $takenAt, $seenAt);
+    }
+
+    /**
+     * @param int $storyId
+     *
+     * @return string
+     *
+     * @throws Exception\InstagramAuthException
+     * @throws Exception\InstagramFetchException
+     */
+    public function likeStory(int $storyId): string
+    {
+        $storyInteraction = new StoryInteraction($this->client, $this->session);
+        return $storyInteraction->like($storyId);
+    }
+
+    /**
+     * @param int $storyId
+     *
+     * @return string
+     *
+     * @throws Exception\InstagramAuthException
+     * @throws Exception\InstagramFetchException
+     */
+    public function unlikeStory(int $storyId): string
+    {
+        $storyInteraction = new StoryInteraction($this->client, $this->session);
+        return $storyInteraction->unlike($storyId);
     }
 
     /**

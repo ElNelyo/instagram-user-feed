@@ -95,7 +95,7 @@ class Login
                     'trustedDeviceRecords' => '{}',
                 ],
                 'headers'     => [
-                    'cookie'           => 'ig_cb=1; csrftoken=' . $csrf_token,
+                   // 'cookie'           => 'ig_cb=1; csrftoken=' . $csrf_token,
                     'referer'          => InstagramHelper::URL_BASE,
                     //'x-csrftoken'      => $csrfToken,
                     'x-csrftoken'      => $csrf_token,

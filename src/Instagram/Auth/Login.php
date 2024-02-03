@@ -87,7 +87,7 @@ class Login
         try {
             $query = $this->client->request('POST', InstagramHelper::URL_AUTH, [
                 //'form_params' => [
-                'body' => [
+                'form_params' => [
                     'username'     => $this->login,
                     'enc_password' => '#PWD_INSTAGRAM_BROWSER:0:' . time() . ':' . $this->password,
                     'optIntoOneTap' => false,

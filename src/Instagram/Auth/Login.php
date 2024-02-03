@@ -85,7 +85,7 @@ class Login
         $cookieJar = new CookieJar();
 
         try {
-            $query = $this->client->request('POST', InstagramHelper::URL_AUTH, [
+            $query = $this->client->request('POST', 'https://www.instagram.com/api/v1/web/accounts/login/ajax', [
                 //'form_params' => [
                 'form_params' => [
                     'username'     => $this->login,

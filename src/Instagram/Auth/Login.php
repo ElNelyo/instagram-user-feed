@@ -61,6 +61,10 @@ class Login
      */
     public function process(): CookieJar
     {
+        $data = file_get_contents('https://www.instagram.com/data/shared_data/');
+        $json = json_decode($data);
+        $csrf_token = $json->config->csrf_token;
+
         $baseRequest = $this->client->request('GET', InstagramHelper::URL_BASE, [
             'headers' => [
                 'user-agent' => OptionHelper::$USER_AGENT,
@@ -82,16 +86,22 @@ class Login
 
         try {
             $query = $this->client->request('POST', InstagramHelper::URL_AUTH, [
-                'form_params' => [
+                //'form_params' => [
+                'body' => [
                     'username'     => $this->login,
                     'enc_password' => '#PWD_INSTAGRAM_BROWSER:0:' . time() . ':' . $this->password,
+                    'optIntoOneTap' => false,
+                    'queryParams' => "{}",
+                    'trustedDeviceRecords' => '{}',
                 ],
                 'headers'     => [
-                    'cookie'           => 'ig_cb=1; csrftoken=' . $csrfToken,
+                    'cookie'           => 'ig_cb=1; csrftoken=' . $csrf_token,
                     'referer'          => InstagramHelper::URL_BASE,
-                    'x-csrftoken'      => $csrfToken,
+                    //'x-csrftoken'      => $csrfToken,
+                    'x-csrftoken'      => $csrf_token,
                     'user-agent'       => OptionHelper::$USER_AGENT,
                     'accept-language'  => OptionHelper::$LOCALE,
+                    'content-type'     => 'application/x-www-form-urlencoded'
                 ],
                 'cookies'     => $cookieJar,
             ]);

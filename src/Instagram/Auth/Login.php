@@ -90,9 +90,9 @@ class Login
                 'form_params' => [
                     'username'     => $this->login,
                     'enc_password' => '#PWD_INSTAGRAM_BROWSER:0:' . time() . ':' . $this->password,
-                    'optIntoOneTap' => false,
+                    //'optIntoOneTap' => false,
                     'queryParams' => "{}",
-                    'trustedDeviceRecords' => '{}',
+                    //'trustedDeviceRecords' => '{}',
                 ],
                 'headers'     => [
                    // 'cookie'           => 'ig_cb=1; csrftoken=' . $csrf_token,

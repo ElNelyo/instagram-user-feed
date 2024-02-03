@@ -96,11 +96,11 @@ class Login
                 ],
                 'headers'     => [
                    // 'cookie'           => 'ig_cb=1; csrftoken=' . $csrf_token,
-                    'referer'          => InstagramHelper::URL_BASE,
+                   // 'referer'          => InstagramHelper::URL_BASE,
                     //'x-csrftoken'      => $csrfToken,
                     'x-csrftoken'      => $csrf_token,
-                    'user-agent'       => OptionHelper::$USER_AGENT,
-                    'accept-language'  => OptionHelper::$LOCALE,
+                    'user-agent'       => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
+                   // 'accept-language'  => OptionHelper::$LOCALE,
                     'content-type'     => 'application/x-www-form-urlencoded'
                 ],
                 'cookies'     => $cookieJar,

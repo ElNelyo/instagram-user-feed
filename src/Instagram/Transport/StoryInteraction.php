@@ -101,7 +101,7 @@ class StoryInteraction extends AbstractDataFeed
         $data = json_decode($data);
 
         if ($data === null) {
-            throw new InstagramAuthException('StoryInteraction error, Unable to get JSON data!');
+            //throw new InstagramAuthException('StoryInteraction error, Unable to get JSON data!');
         }
 
         return $data->status;

@@ -161,7 +161,7 @@ class Login
             $data = $matches[1];
 
             if (!isset($data->config->viewer) && !isset($data->config->viewerId)) {
-                throw new InstagramAuthException('Please login with instagram credentials.');
+                //throw new InstagramAuthException('Please login with instagram credentials.');
             }
         }
 

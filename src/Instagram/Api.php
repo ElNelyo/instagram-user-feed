@@ -138,6 +138,7 @@ class Api
         $this->session = new Session($cookies);
     }
 
+
     /**
      * @param string $username
      * @param string $password

@@ -30,7 +30,7 @@ class JsonStoriesDataFeed extends AbstractDataFeed
             'stories_video_dash_manifest' => false,
         ];
 
-        $endpoint = InstagramHelper::URL_BASE . 'graphql/query/?query_hash=' . InstagramHelper::QUERY_HASH_STORIES . '&variables=' . json_encode($variables);
+        $endpoint = InstagramHelper::URL_BASE . 'graphql/query/?query_id=9957820854288654&query_hash=' . InstagramHelper::QUERY_HASH_STORIES . '&variables=' . json_encode($variables);
 
         $data = $this->fetchJsonDataFeed($endpoint);
 

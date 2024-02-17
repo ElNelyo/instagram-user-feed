@@ -346,7 +346,7 @@ class Api
      * @throws Exception\InstagramAuthException
      * @throws Exception\InstagramFetchException
      */
-    public function getStories(int $userId): ProfileStory
+    public function getStories(int $userId)
     {
         $feed = new JsonStoriesDataFeed($this->client, $this->session);
         $data = $feed->fetchData($userId);

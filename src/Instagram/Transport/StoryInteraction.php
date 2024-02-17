@@ -81,6 +81,7 @@ class StoryInteraction extends AbstractDataFeed
                 'accept-language' => OptionHelper::$LOCALE,
                 'x-csrftoken'     => $csrfToken,
                 'x-ig-app-id'     => 1217981644879628,
+                'Content-Type'    => 'application/x-www-form-urlencoded'
             ],
             'cookies' => $this->session->getCookies(),
         ];

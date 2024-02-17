@@ -350,11 +350,13 @@ class Api
     {
         $feed = new JsonStoriesDataFeed($this->client, $this->session);
         $data = $feed->fetchData($userId);
+        return $data;
 
-        $hydrator = new StoriesHydrator();
+        /*$hydrator = new StoriesHydrator();
         $hydrator->hydrateStories($data);
 
         return $hydrator->getStories();
+        */
     }
 
     /**
